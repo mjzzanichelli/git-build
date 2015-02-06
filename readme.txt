@@ -1,0 +1,6 @@
+- receive pushes to master from github webhooks
+                                         - clone/pull to source for the pushed repos
+                                         - watch changes on source
+                                         	- copy source changes into a labelled folder into archive/<label>/changes
+                                         	- copy entire solution into a labelled folder into archive/<label>/solution
+                                         	- minify and concat sources into dist
