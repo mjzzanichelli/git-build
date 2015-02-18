@@ -27,7 +27,7 @@ WebHooks.prototype.start = function(port){
     this.port = port || this.port
     if (!this.port) return false;
     var _self = this;
-    this.server = this.app.listen(9001, function () {
+    this.server = this.app.listen(this.port, function () {
         console.log('Webhooks Server listening at http://%s:%s', this.server.address().address, this.server.address().port)
     }.bind(this))
 }
