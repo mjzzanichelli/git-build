@@ -5,8 +5,10 @@
   "description": "Automated build from git pushes",
   "main": "index.js",
   "scripts": {
-    "preinstall": "cd src && for /D /r %G in (\"*.mod\") DO npm install %G",
-    "test": "npm install && cd test && for /r %G in (\"*.spec.js\") DO mocha %G",
+    "preinstall_win": "cd src && for /D /r %G in (\"*.mod\") DO npm install %G",
+    "preinstall": "for d in src/*/*.mod; do npm install \"$d\"; done;",
+    "test_win": "npm install && cd test && for /r %G in (\"*.spec.js\") DO mocha %G",
+    "test": "npm install && for d in test/*.spec.js; do mocha \"$d\"; done;",
     "start": "npm install && node index"
   },
   "devDependencies": {
